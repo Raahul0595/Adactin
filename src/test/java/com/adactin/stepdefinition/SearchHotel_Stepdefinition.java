@@ -50,20 +50,22 @@ public class SearchHotel_Stepdefinition extends BaseClass {
 
 	@When("^User enters the check in date as \"([^\"]*)\"$")
 	public void user_enters_the_check_in_date_as(String arg1) throws Throwable {
+		clearOnElement(sh.getCheckindate());
 		InputToElement(sh.getCheckindate(), arg1);
 
 	}
 
 	@When("^User enters the check out date as \"([^\"]*)\"$")
 	public void user_enters_the_check_out_date_as(String arg1) throws Throwable {
-
+		clearOnElement(sh.getCheckoutdate());
 		InputToElement(sh.getCheckoutdate(), arg1);
 
 	}
 
 	@When("^User selects the adults per room$")
 	public void user_selects_the_adults_per_room() throws Throwable {
-		selectByOption(sh.getAdultroom(), "2 - Two", "VisibileText");
+		Thread.sleep(3000);
+		selectByOption(sh.getAdultroom(), "2", "index");
 	}
 
 	@When("^User selects the children per room$")

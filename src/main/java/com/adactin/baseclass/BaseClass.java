@@ -79,4 +79,16 @@ public class BaseClass {
 		}
 
 	}
+	
+	
+	public static void clearOnElement(WebElement element) {
+
+		element.clear();
+	}
+	
+	
+	
+	
+	
+	
 }
